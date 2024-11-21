@@ -6,11 +6,9 @@ import base64
 import google.generativeai as genai
 from io import BytesIO
 
-# Load environment variables from .env file
 load_dotenv()  
 
-# Set the Google API Key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyC1dfpbwe3M4OR7INPSNX_4F4zvVdGlBSM"
+os.environ["GOOGLE_API_KEY"] = "your api key"
 
 # os.environ["GOOGLE_API_KEY"] = os.getenv("AIzaSyC1dfpbwe3M4OR7INPSNX_4F4zvVdGlBSM")
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
@@ -71,7 +69,6 @@ if submit_image and uploaded_file:
     st.subheader("The Response for the Image is: ")
     st.write(response)
 
-# If the text-only question button is clicked
 if submit:
     response = get_gemini_response(input_text)
     st.subheader("The Response is: ")
