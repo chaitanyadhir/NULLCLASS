@@ -10,10 +10,8 @@ load_dotenv()
 
 os.environ["GOOGLE_API_KEY"] = "your api key"
 
-# os.environ["GOOGLE_API_KEY"] = os.getenv("AIzaSyC1dfpbwe3M4OR7INPSNX_4F4zvVdGlBSM")
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
-# Function to load the Gemini model and get responses
 model = genai.GenerativeModel("gemini-1.5-flash")
 chat = model.start_chat(history=[])
 
